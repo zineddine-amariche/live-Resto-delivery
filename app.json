@@ -35,7 +35,8 @@
     },
     "plugins": [
       "expo-build-properties",
-      "expo-maps"
+      "expo-maps",
+      "expo-asset"
     ]
   }
 }
