@@ -1,4 +1,11 @@
-import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
 import back from "../../../../Assets/img/c2.png";
 import checkMesg from "../../../../Assets/img/checkSend.png";
@@ -8,23 +15,15 @@ import { COLORS, SIZES } from "../../../../theme";
 import { Txt } from "../../../../components/utils";
 import Iconer from "../../../../components/Iconer";
 import { ButtonRectangle195 } from "../../../../components/Buttons";
-import moment from "moment";
-import "moment/locale/fr";
 
 
-const RenderSendMessage = ({navigation,item}) => {
-
+const RenderSendMessage = ({ navigation, item }) => {
   let user = item?.order?.customer;
-  const dateString = item.order.for_when;
-
-  const date = moment(dateString);
-  const formattedDate = date.format("DD MMMM [à] HH:mm");
-
 
   const deliveryAddress = JSON.parse(item.order.delivery_address);
   return (
     <Cover>
-      <View style={{ flex: 1 }}  >
+      <View style={{ flex: 1 }}>
         <View
           style={{
             flexDirection: "row",
@@ -37,25 +36,28 @@ const RenderSendMessage = ({navigation,item}) => {
         >
           <View>
             <TouchableOpacity
-            onPress={()=>{
-       
-              navigation.navigate("Details",{id:item.id});
-
-            }}
+              onPress={() => {
+                navigation.navigate("Details", { id: item.id });
+              }}
             >
-
-            <Txt fontSize={14}>{item.establishment
+              <Txt fontSize={14}>
+                {item.establishment
                   ? item.establishment
-                  : "Establishment non disponible"}{" "}- #56226</Txt>
-            <Txt Bold="700"> {user.firstname}
-                {user.lastname}{" "}</Txt>
+                  : "Establishment non disponible"}{" "}
+                - #56226
+              </Txt>
+              <Txt Bold="700">
+                {" "}
+                {user.firstname}
+                {user.lastname}{" "}
+              </Txt>
 
-            <Txt>
-            {deliveryAddress.address} - {deliveryAddress.floor} - {deliveryAddress.city}
+              <Txt>
+                {deliveryAddress.address} - {deliveryAddress.floor} -{" "}
+                {deliveryAddress.city}
+              </Txt>
 
-            </Txt>
-
-            <Iconer title="En livraison" icon={bike} color={COLORS.green3} />
+              <Iconer title="En livraison" icon={bike} color={COLORS.green3} />
             </TouchableOpacity>
 
             <View
@@ -84,7 +86,7 @@ const RenderSendMessage = ({navigation,item}) => {
             flex: 1,
             borderRadius: 7,
             overflow: "hidden",
-            zIndex:-1
+            zIndex: -1,
           }}
         >
           <Image
@@ -110,7 +112,7 @@ const Cover = ({ children }) => {
         alignItems: "baseline",
         paddingVertical: 8,
         overflow: "hidden",
-        height:250,
+        height: 250,
       }}
     >
       {children}
