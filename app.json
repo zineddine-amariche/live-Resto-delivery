@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.liveRestoDelivery"
     },
     "android": {
       "adaptiveIcon": {
@@ -31,6 +32,10 @@
       "eas": {
         "projectId": "539602f4-230e-467c-92f5-35587d6873bc"
       }
-    }
+    },
+    "plugins": [
+      "expo-build-properties",
+      "expo-maps"
+    ]
   }
 }
