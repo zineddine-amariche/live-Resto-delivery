@@ -1,16 +1,14 @@
-import { View, Text, TextInput, KeyboardAvoidingView } from "react-native";
-import React, { useEffect, useState } from "react";
-import { Field, Form, Formik } from "formik";
+import { View, Text } from "react-native";
+import React from "react";
+import { Formik } from "formik";
 import { UseLogin } from "../../Hooks/UseLogin";
 import styles from "./styles";
-import CheckBox from "react-native-check-box";
-// import ButtonLogin from '../Button';
-import Icon from "react-native-vector-icons/FontAwesome";
+
 import * as Animatable from "react-native-animatable";
 import { PrimaryButton } from "../../../../../components/Buttons";
 import PrimaryInput from "../../../../../components/Input";
-import { COLORS } from "../../../../../theme";
 import Space from "../../../../../components/Space";
+import Checkbox from 'expo-checkbox';
 
 const FormLogin = ({ FocusHandeler, isFocused }) => {
   const {
